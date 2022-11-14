@@ -6,26 +6,27 @@ import BlogDetail from './components/BlogDetail';
 
 function App() {
 
-  // States
-  const [activeList, setActiveList] = useState([])
-  const [activePage, setActivePage] = useState(1)
+  // // States
+  // const [activeList, setActiveList] = useState([])
+  // const [activePage, setActivePage] = useState(1)
 
 
-  // onChange page number
-  const handlePageChange = (pageNumber) => {
-    setActivePage(pageNumber);
-  }
+  // // onChange page number
+  // const handlePageChange = (pageNumber) => {
+  //   setActivePage(pageNumber);
+  // }
 
-  // fetch api
-  useEffect(() => {
-    fetch(`https://jsonplaceholder.typicode.com/posts?userId=${activePage}`)
-      .then((res) => res.json())
-      .then((json) => setActiveList(json))
-  }, [activePage])
+  // // fetch api
+  // useEffect(() => {
+  //   fetch(`https://jsonplaceholder.typicode.com/posts?userId=${activePage}`)
+  //     .then((res) => res.json())
+  //     .then((json) => setActiveList(json))
+  // }, [activePage])
 
   return (
     <>
-      <Router>
+      <h1>Hello World!!!</h1>
+      {/* <Router>
 
         <Routes>
           <Route
@@ -43,7 +44,7 @@ function App() {
           />
 
         </Routes>
-      </Router>
+      </Router> */}
     </>
   );
 }
