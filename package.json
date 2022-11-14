@@ -2,7 +2,7 @@
   "name": "my-blog",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Himanshu-Dhyani.github.io/",
+  "homepage": "https://Himanshu-Dhyani.github.io/my-blog",
   "dependencies": {
     "-": "^0.0.1",
     "@testing-library/jest-dom": "^5.16.5",
