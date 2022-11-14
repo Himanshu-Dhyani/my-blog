@@ -29,9 +29,9 @@ function App() {
 
         <Routes>
           <Route
-            exact path='/my-blog'
+            exact path='/'
             element={
-              <BlogCards exact path="/my-blog" activePage={activePage} activeList={activeList} handlePageChange={handlePageChange} />
+              <BlogCards exact path="/" activePage={activePage} activeList={activeList} handlePageChange={handlePageChange} />
             }
           />
 
