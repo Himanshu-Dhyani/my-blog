@@ -1,8 +1,8 @@
 import './App.css';
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import BlogCards from './components/BlogCards';
-import BlogDetail from './components/BlogDetail';
+// import React, { useState, useEffect } from 'react';
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import BlogCards from './components/BlogCards';
+// import BlogDetail from './components/BlogDetail';
 
 function App() {
 

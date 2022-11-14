@@ -1,42 +1,42 @@
-import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom';
-import Header from './Header';
-import Card from 'react-bootstrap/Card';
-import Comment from './Comment';
-import Loader from './Loader';
+// import React, { useState, useEffect } from 'react'
+// import { useParams } from 'react-router-dom';
+// import Header from './Header';
+// import Card from 'react-bootstrap/Card';
+// import Comment from './Comment';
+// import Loader from './Loader';
 
-export default function BlogDetail() {
+// export default function BlogDetail() {
 
-    const params = useParams();
-    const [activeList, setActiveList] = useState(null)
+//     const params = useParams();
+//     const [activeList, setActiveList] = useState(null)
 
-    // fetch api
-    useEffect(() => {
-        fetch(`https://jsonplaceholder.typicode.com/posts/${params.id}`)
-            .then((res) => res.json())
-            .then((json) => setActiveList(json))
-    }, [params.id])
+//     // fetch api
+//     useEffect(() => {
+//         fetch(`https://jsonplaceholder.typicode.com/posts/${params.id}`)
+//             .then((res) => res.json())
+//             .then((json) => setActiveList(json))
+//     }, [params.id])
 
-    return (
-        <>
-            <Header />
+//     return (
+//         <>
+//             <Header />
 
-            {activeList === null ? <Loader /> :
-                (<div className="blogDetailContainer">
-                    {activeList && (
-                        <>
-                            <Card className='blog_detail'>
-                                <Card.Img variant="top" src="https://images.indianexpress.com/2022/06/Enchanted-lake-perseverance-rover-Mars.jpg" />
-                                <Card.Body>
-                                    <Card.Title>{activeList.title}</Card.Title>
-                                    <Card.Text>{activeList.body}</Card.Text>
-                                </Card.Body>
-                            </Card>
-                        </>
-                    )}
-                    <Comment />
-                </div>)}
-        </>
+//             {activeList === null ? <Loader /> :
+//                 (<div className="blogDetailContainer">
+//                     {activeList && (
+//                         <>
+//                             <Card className='blog_detail'>
+//                                 <Card.Img variant="top" src="https://images.indianexpress.com/2022/06/Enchanted-lake-perseverance-rover-Mars.jpg" />
+//                                 <Card.Body>
+//                                     <Card.Title>{activeList.title}</Card.Title>
+//                                     <Card.Text>{activeList.body}</Card.Text>
+//                                 </Card.Body>
+//                             </Card>
+//                         </>
+//                     )}
+//                     <Comment />
+//                 </div>)}
+//         </>
 
-    )
-}
+//     )
+// }
