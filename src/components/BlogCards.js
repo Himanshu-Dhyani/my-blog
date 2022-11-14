@@ -21,7 +21,7 @@ function BlogCards({ activePage, activeList, handlePageChange }) {
                                     <Card.Title className="card_title">{post.title}</Card.Title>
                                     <Card.Text className="card_desc">{post.body}</Card.Text>
 
-                                    <Link to={`blogDetail/${post.id}`} >
+                                    <Link to={`/my-blog/blogDetail/${post.id}`} >
                                         <Button variant="primary">
                                             Detail
                                         </Button>

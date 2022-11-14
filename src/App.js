@@ -36,7 +36,7 @@ function App() {
           />
 
           <Route
-            exact path='blogDetail/:id'
+            exact path='/my-blog/blogDetail/:id'
             element={
               <BlogDetail />
             }
