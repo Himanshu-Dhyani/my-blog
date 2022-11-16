@@ -12,12 +12,21 @@ code {
     monospace;
 }
 
-.blog_detail::-webkit-scrollbar {
-  display: none;
+/* user list card style */
+.userCard {
+  width: 98%;
+  margin: 10px;
+}
+
+/* user Detail card style */
+.userCardDetail {
+  width: 98%;
+  margin: 10px;
+  border: none !important;
 }
 
 /* blog card style  */
-.card {
+.blogCard {
   width: 22rem;
   margin: 10px;
 }
@@ -43,6 +52,18 @@ code {
   -webkit-box-orient: vertical;
 }
 
+/* album Card style */
+.albumCard {
+  border: none !important;
+  border-bottom: 1px solid black !important;
+  border-radius: 0 !important;
+}
+
+.albumCardBody {
+  display: flex;
+  justify-content: space-between;
+}
+
 /* Blog Detail */
 .blog_detail {
   width: 100%;
@@ -52,6 +73,10 @@ code {
 
 .blogDetailContainer {
   margin: 0px 65px;
+}
+
+.blog_detail::-webkit-scrollbar {
+  display: none;
 }
 
 /* pagination Style */

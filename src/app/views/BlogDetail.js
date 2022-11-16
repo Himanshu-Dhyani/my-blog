@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
-import Header from './Header';
+import Header from '../components/Header';
 import Card from 'react-bootstrap/Card';
-import Comment from './Comment';
-import Loader from './Loader';
+import Comment from '../components/Comment';
+import Loader from '../components/Loader';
 
 export default function BlogDetail() {
 

@@ -1,27 +1,37 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import Pagination from 'react-js-pagination';
-import { Link } from 'react-router-dom';
-import Header from './Header';
+import { Link, useParams } from 'react-router-dom';
 import Loader from './Loader';
+// import Search from './Search';
 
-function BlogCards({ activePage, activeList, handlePageChange }) {
+
+
+function BlogCards() {
+
+    const params = useParams();
+    const [activeList, setActiveList] = useState([]);
+
+    useEffect(() => {
+        fetch(`https://jsonplaceholder.typicode.com/users/${params.id}/posts`)
+            .then((res) => res.json())
+            .then((json) => setActiveList(json))
+    }, [params.id])
 
     return (
         <>
-            <Header />
+            {/* <Search activeList={activeList} /> */}
             {activeList.length === 0 ? <Loader /> : (
                 <div>
                     <div className="card_container">
                         {activeList.map((post) => (
-                            <Card className="card" key={post.id}>
+                            <Card className="blogCard" key={post.id}>
                                 <Card.Img variant="top" src="https://images.indianexpress.com/2022/06/Enchanted-lake-perseverance-rover-Mars.jpg" />
                                 <Card.Body >
                                     <Card.Title className="card_title">{post.title}</Card.Title>
                                     <Card.Text className="card_desc">{post.body}</Card.Text>
 
-                                    <Link to={`/my-blog/blogDetail/${post.id}`} >
+                                    <Link to={`/blogDetail/${post.id}`} >
                                         <Button variant="primary">
                                             Detail
                                         </Button>
@@ -32,15 +42,6 @@ function BlogCards({ activePage, activeList, handlePageChange }) {
                         ))
                         }
                     </div>
-                    <Pagination
-                        innerClass="paginationMain"
-                        activeClass="activePageClass"
-                        activePage={activePage}
-                        itemsCountPerPage={activeList.length}
-                        totalItemsCount={100}
-                        pageRangeDisplayed={5}
-                        onChange={handlePageChange}
-                    />
                 </div>
 
             )}
