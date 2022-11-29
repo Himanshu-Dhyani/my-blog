@@ -4,6 +4,7 @@ import Tabs from 'react-bootstrap/Tabs';
 import AlbumList from './AlbumList';
 import BlogCards from './BlogCards';
 import TodoList from './TodoList';
+import Example from './Example';
 
 export default function TabContents() {
     return (
@@ -21,6 +22,9 @@ export default function TabContents() {
                 </Tab>
                 <Tab eventKey="Album" title="Album">
                     <AlbumList />
+                </Tab>
+                <Tab eventKey="Practice" title="Practice">
+                    <Example />
                 </Tab>
             </Tabs>
         </>

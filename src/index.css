@@ -34,7 +34,7 @@ code {
 .card_container {
   display: grid;
   grid-template-columns: auto auto auto;
-  background-color: rgb(244, 241, 241);
+
   padding: 10px;
 }
 
@@ -52,16 +52,36 @@ code {
   -webkit-box-orient: vertical;
 }
 
+/* post Card Header Style */
+.postCardHeader {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 67px 10px 10px;
+}
+
+.addPostBtn {
+  margin-left: 10px;
+}
+
 /* album Card style */
 .albumCard {
   border: none !important;
-  border-bottom: 1px solid black !important;
+  border-bottom: 1px solid #cdc9c9 !important;
   border-radius: 0 !important;
 }
 
 .albumCardBody {
   display: flex;
   justify-content: space-between;
+}
+
+/* Todos Style */
+.todoTitle {
+  display: flex;
+}
+
+#default-checkbox {
+  margin-right: 10px !important;
 }
 
 /* Blog Detail */
@@ -79,12 +99,19 @@ code {
   display: none;
 }
 
+.userCarduserDetail {
+  border: none !important;
+}
+
 /* pagination Style */
 .paginationMain {
   display: flex;
-  justify-content: space-between;
   padding: 10px;
   margin: 0;
+}
+
+.paginationMainHide {
+  display: none;
 }
 
 .paginationMain li {
@@ -109,7 +136,7 @@ code {
 }
 
 .activePageClass {
-  background-color: rgb(122, 122, 180);
+  background-color: #0d6efd;
   pointer-events: none;
 }
 
@@ -150,4 +177,10 @@ code {
   position: absolute;
   top: 50%;
   left: 50%;
+}
+
+/* Error Msg Style */
+.errorMsg {
+  color: red;
+  font-size: 12px;
 }
