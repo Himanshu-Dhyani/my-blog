@@ -70,7 +70,6 @@ export default function TodoList() {
         const data = {
             id: `${showEditId}`,
             title: `${editTitle}`,
-            // completed: false,
             userId: `${params.id}`,
         }
         // fetches todos of todo which we want to edit
@@ -134,7 +133,6 @@ export default function TodoList() {
                 editTodos={editTodos}
                 handleTodoEditTitle={handleTodoEditTitle}
             />
-
         </>
     )
 }

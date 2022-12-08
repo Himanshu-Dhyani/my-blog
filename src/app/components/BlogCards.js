@@ -148,7 +148,6 @@ function BlogCards() {
                     handleSearchClick={handleSearchClick}
                     handleKeyDown={handleKeyDown}
                 />
-
                 <Button onClick={handleShow} className="addPostBtn">+ Add Post</Button>
             </div>
             <div className="card_container">
