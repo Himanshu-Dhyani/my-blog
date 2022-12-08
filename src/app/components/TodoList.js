@@ -8,8 +8,10 @@ import EditTodoModal from './EditTodoModal';
 
 export default function TodoList() {
 
+    // useParams helps us to take the Id from the url
     const params = useParams()
 
+    //States
     const [todos, setTodos] = useState([])
     const [title, setTitle] = useState("")
     const [showEditId, setShowEditId] = useState(0);
@@ -17,20 +19,30 @@ export default function TodoList() {
     const [show, setShow] = useState(false);
     const [showEdit, setShowEdit] = useState(false);
 
+    //To close Add todo modal
     const handleClose = () => setShow(false);
+
+    //To open Add todo modal
     const handleShow = () => setShow(true);
 
+    //To close edit todo modal
     const handleCloseEdit = () => setShowEdit(false);
+
+    //To open edit todo modal
     const handleShowEdit = () => setShowEdit(true);
 
     useEffect(() => {
+        // fetches todos of a particular user which we want
         fetch(`https://jsonplaceholder.typicode.com/todos?userId=${params.id}`)
             .then((res) => res.json())
+            // set state when the data received
             .then((json) => setTodos(json))
     }, [params.id])
 
+    //to find value of title while adding todos
     const handleTodoTitle = (e) => setTitle(e.target.value)
 
+    //new object to add in the array of todos
     const newtodo = {
         "userId": `${params.id}`,
         "id": 101,
@@ -38,26 +50,30 @@ export default function TodoList() {
         "completed": false
     }
 
+    //Adding todo in previous array and closing the modal 
     const handleAddTodo = () => {
         setTodos([newtodo, ...todos])
         handleClose()
     }
 
+    //Passing id and calling Edit btn
     const editTodoBtn = (id) => {
         handleShowEdit()
         setShowEditId(id)
     }
 
+    // value of title in input bar
     const handleTodoEditTitle = (e) => setEditTitle(e.target.value)
 
+    //API call for editing to todos
     const editTodos = async () => {
         const data = {
             id: `${showEditId}`,
             title: `${editTitle}`,
-            completed: false,
+            // completed: false,
             userId: `${params.id}`,
         }
-
+        // fetches todos of todo which we want to edit
         await fetch(`https://jsonplaceholder.typicode.com/todos/${showEditId}`, {
             method: 'PUT',
             body: JSON.stringify(data),

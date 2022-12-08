@@ -6,13 +6,17 @@ import Header from '../components/Header';
 import Loader from '../components/Loader';
 
 export default function UserDetail() {
+
+    // useParams helps us to take the Id from the url
     const params = useParams();
 
     const [userDetail, setUserDetail] = useState(null)
 
     useEffect(() => {
+        // fetches detail of a particular user which we want 
         fetch(`https://jsonplaceholder.typicode.com/users/${params.id}`)
             .then((res) => res.json())
+            // set state when the data received
             .then((json) => setUserDetail(json))
     }, [params.id])
 

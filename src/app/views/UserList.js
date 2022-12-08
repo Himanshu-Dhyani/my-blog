@@ -7,13 +7,13 @@ import Loader from '../components/Loader';
 
 export default function UserList() {
 
-    // States
+    // This State is used for maintaing the json in an array 
     const [userList, setUserList] = useState([])
 
-    // fetch api
     useEffect(() => {
         fetch(`https://jsonplaceholder.typicode.com/users`)
             .then((res) => res.json())
+            // set state when the data received
             .then((json) => setUserList(json))
     }, [])
 

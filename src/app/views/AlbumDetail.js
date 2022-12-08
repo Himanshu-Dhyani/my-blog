@@ -5,13 +5,16 @@ import Loader from '../components/Loader';
 
 export default function AlbumDetail() {
 
+    // useParams helps us to take the Id from the url
     const params = useParams();
 
     const [albumDetail, setAlbumDetail] = useState([])
 
     useEffect(() => {
+        // fetches album detail of a particular user which we want
         fetch(`https://jsonplaceholder.typicode.com/albums/${params.id}/photos`)
             .then((res) => res.json())
+            // set state when the data received
             .then((json) => setAlbumDetail(json))
     }, [params.id])
     return (
@@ -31,6 +34,5 @@ export default function AlbumDetail() {
             )
             }
         </div>
-
     )
 }

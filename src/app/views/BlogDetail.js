@@ -7,13 +7,17 @@ import Loader from '../components/Loader';
 
 export default function BlogDetail() {
 
+    // useParams helps us to take the Id from the url
     const params = useParams();
+
     const [activeList, setActiveList] = useState(null)
 
-    // fetch api
+    // fetch api for post 
     useEffect(() => {
+        // to fetch a post of particular user
         fetch(`https://jsonplaceholder.typicode.com/posts/${params.id}`)
             .then((res) => res.json())
+            // set state when the data received
             .then((json) => setActiveList(json))
     }, [params.id])
 
