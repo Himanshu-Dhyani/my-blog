@@ -32,12 +32,16 @@ function BlogCards() {
     //To open Add Post modal
     const handleShow = () => setShow(true);
 
-    useEffect(() => {
+    const getPost = () => {
         // fetches posts of a particular user which we want
         fetch(`https://jsonplaceholder.typicode.com/users/${params.id}/posts`)
             .then((res) => res.json())
             // set state when the data received
             .then((json) => setActiveList(json))
+    }
+
+    useEffect(() => {
+        getPost()
     }, [params.id])
 
     //new object to add in activeList
