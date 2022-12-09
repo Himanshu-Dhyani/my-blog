@@ -119,6 +119,9 @@ function BlogCards() {
         if (searchInput !== "" && !/^\s/.test(searchInput)) {
             setActiveList(filtered)
         }
+        else if (searchInput.length === 0) {
+            getPost()
+        }
         setActivePage(1)
     }
 
